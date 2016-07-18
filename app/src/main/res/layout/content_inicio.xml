@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Source.InicioActivity"
+    tools:showIn="@layout/activity_inicio">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/bg"
+            android:id="@+id/iv_logo"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_logo"
+            android:layout_marginTop="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_descripcion"
+                android:enabled="false"
+                android:editable="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/iv_logo"
+                android:layout_marginTop="20dp"
+                android:hint="@string/imei" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_descripcion"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_usuario"
+                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/et_descripcion"
+                android:hint="@string/usuario" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_clave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_usuario"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_clave"
+                android:inputType="textPassword"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/et_usuario"
+                android:hint="@string/contrasena" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_sincro"
+            android:textSize="20dp"
+            android:text="@string/sincronizar"
+            android:onClick="Sincronizar"
+            android:layout_below="@+id/input_clave"
+            android:layout_marginTop="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/boton_selector"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_ingreso"
+            android:layout_gravity="right"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:text="@string/ingresar"
+            android:onClick="Ingresar"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_toLeftOf="@+id/linearLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/boton_selector"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_limpiar"
+            android:layout_gravity="right"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:text="@string/limpiar"
+            android:onClick="Limpiar"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/linearLayout2"
+            android:layout_toEndOf="@+id/linearLayout2"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/boton_selector"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignTop="@+id/btn_sincro"
+            android:id="@+id/linearLayout2"></LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_datos"
+            android:layout_below="@+id/iv_logo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credentials"
+            android:id="@+id/checkBox2"
+            android:layout_alignLeft="@+id/btn_sincro"
+            android:layout_alignStart="@+id/btn_sincro"
+            android:layout_alignRight="@+id/btn_sincro"
+            android:layout_alignEnd="@+id/btn_sincro"
+            android:layout_below="@+id/input_clave"
+            android:checked="false"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

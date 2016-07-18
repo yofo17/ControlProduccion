@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_Vfecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_changeid"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_Vfecha"
+            android:inputType="text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/fechaFormato" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nic"
+        android:id="@+id/textView63"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_nic"
+        android:layout_alignTop="@+id/textView63"
+        android:layout_toRightOf="@+id/textView63"
+        android:gravity="center_vertical"
+        android:textSize="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_view_select"
+        android:layout_centerHorizontal="true"
+        android:listSelector="@drawable/list_selector"
+        android:choiceMode="singleChoice"
+        android:visibility="visible"
+        android:layout_alignTop="@+id/input_Vfecha"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Do you want to change ID?"
+        android:id="@+id/tv_changeid"
+        android:layout_below="@+id/textView63"
+        android:layout_alignLeft="@+id/textView63"
+        android:layout_alignStart="@+id/textView63"
+        android:layout_alignRight="@+id/tv_nic"
+        android:layout_alignEnd="@+id/tv_nic"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/red_700"/>
+
+</RelativeLayout>

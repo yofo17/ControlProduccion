@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_alignRight="@+id/btn_seleccionar_dockets"
+        android:layout_alignEnd="@+id/btn_seleccionar_dockets">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_buscar"
+            android:inputType="text"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/imageView"
+            android:layout_marginTop="5dp"
+            android:hint="@string/buscar"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/find"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/input_buscar" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/seleccionar"
+        android:id="@+id/btn_seleccionar_dockets"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/boton_selector"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout3"
+        android:layout_below="@+id/input_buscar"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:text="@string/codbarra"
+            android:id="@+id/textView4"
+            android:layout_column="3"
+            android:background="@drawable/button_border"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="match_parent"
+            android:text="@string/fechareq"
+            android:id="@+id/textView6"
+            android:layout_column="5"
+            android:background="@drawable/button_border"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="match_parent"
+            android:text="@string/nombrecliente"
+            android:id="@+id/textView5"
+            android:layout_column="4"
+            android:background="@drawable/button_border"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_dockets"
+        android:layout_weight="1"
+        android:choiceMode="singleChoice"
+        android:layout_centerHorizontal="true"
+        android:listSelector="@drawable/list_selector"
+        android:layout_above="@+id/btn_seleccionar_dockets"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_total_1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/input_buscar"
+        android:layout_toEndOf="@+id/input_buscar"
+        android:layout_alignBottom="@+id/input_buscar"
+        android:gravity="center" />
+
+</RelativeLayout>

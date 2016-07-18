@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:weightSum="1"
+        android:id="@+id/linearLayout7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/lblListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
+            android:textSize="17dp"
+            android:textColor="@color/blue_900"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/checkBox"
+            android:focusable="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:checked="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvt_lbl"
+            android:textColor="@color/blue_900"
+            android:textSize="17dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+</RelativeLayout>

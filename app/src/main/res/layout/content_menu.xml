@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Source.MenuActivity"
+    tools:showIn="@layout/activity_menu">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/btn_star"
+            android:text="@string/start"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="23dp"
+            android:layout_toStartOf="@+id/linearLayout"
+            android:layout_toLeftOf="@+id/linearLayout"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/boton_selector"
+            android:onClick="Start" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="@string/out"
+            android:id="@+id/btn_out"
+            android:textSize="23dp"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:layout_toEndOf="@+id/linearLayout"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/boton_selector"
+            android:onClick="Out" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="@string/view"
+            android:id="@+id/btn_view"
+            android:layout_weight="0.58"
+            android:textSize="23dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/btn_star"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/linearLayout"
+            android:layout_alignEnd="@+id/linearLayout"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/boton_selector"
+            android:onClick="View_" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="@string/email"
+            android:id="@+id/btn_email"
+            android:layout_weight="0.58"
+            android:textSize="23dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/btn_out"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:layout_toEndOf="@+id/linearLayout"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/boton_selector"
+            android:onClick="Email" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="@string/lunch"
+            android:id="@+id/btn_lunch"
+            android:layout_weight="0.55"
+            android:textSize="23dp"
+            android:textColor="@color/white"
+            android:background="@drawable/boton_selector"
+            android:onClick="Lunch"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/btn_email"
+            android:layout_alignStart="@+id/btn_email"
+            android:layout_alignRight="@+id/btn_email"
+            android:layout_alignEnd="@+id/btn_email"
+            android:layout_marginTop="25dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="@string/validate"
+            android:id="@+id/btn_validate"
+            android:textSize="25dp"
+            android:layout_weight="1.00"
+            android:textColor="@color/white"
+            android:layout_below="@+id/btn_break"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/boton_selector"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="@string/_break"
+            android:id="@+id/btn_break"
+            android:layout_weight="0.58"
+            android:textSize="23dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/btn_email"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/boton_selector"
+            android:onClick="Break"
+            android:layout_alignRight="@+id/btn_view"
+            android:layout_alignEnd="@+id/btn_view" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/btn_validate"
+            android:id="@+id/linearLayout"></LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
