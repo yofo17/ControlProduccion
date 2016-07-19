@@ -179,26 +179,44 @@ public class WebService {
         }
     }
 
-    public String addExtrajob(String codigo, Alteration[] datos){
+    public String addExtrajob(String codigo, Alteration[] datos, int pos){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         SoapObject request = new SoapObject(NAMESPACE, "addExtrajob");
         request.addProperty("codigo", codigo);
         SoapObject arrayDatos = new SoapObject("", "");
         if (datos != null) {
-            SoapObject datosArray = new SoapObject("", "");
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(0), datos[0].getProperty(0));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(1), datos[0].getProperty(1));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(2), datos[0].getProperty(2));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(3), datos[0].getProperty(3));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(4), datos[0].getProperty(4));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(5), datos[0].getProperty(5));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(6), datos[0].getProperty(6));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(7), datos[0].getProperty(7));
-            datosArray.addProperty(datos[0].getPropertyInfoCamp(8), datos[0].getProperty(8));
-            arrayDatos.addProperty("datos", datosArray);
+            if(pos-1 == 0){
+                for(int i=0; i<=pos-1; i++){
+                    SoapObject datosArray = new SoapObject("", "");
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(0), datos[i].getProperty(0));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(1), datos[i].getProperty(1));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(2), datos[i].getProperty(2));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(3), datos[i].getProperty(3));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(4), datos[i].getProperty(4));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(5), datos[i].getProperty(5));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(6), datos[i].getProperty(6));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(7), datos[i].getProperty(7));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(8), datos[i].getProperty(8));
+                    arrayDatos.addProperty("datos", datosArray);
+                }
+                request.addProperty("datos", arrayDatos);
+            }else{
+                for(int i=0; i<=pos-1; i++){
+                    SoapObject datosArray = new SoapObject("", "");
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(0), datos[i].getProperty(0));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(1), datos[i].getProperty(1));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(2), datos[i].getProperty(2));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(3), datos[i].getProperty(3));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(4), datos[i].getProperty(4));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(5), datos[i].getProperty(5));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(6), datos[i].getProperty(6));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(7), datos[i].getProperty(7));
+                    datosArray.addProperty(datos[i].getPropertyInfoCamp(8), datos[i].getProperty(8));
+                    request.addProperty("datos", datosArray);
+                }
+            }
         }
-        request.addProperty("datos", arrayDatos);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.setOutputSoapObject(request);
         envelope.dotNet = true;
@@ -207,7 +225,6 @@ public class WebService {
             androidHttpTransport.call(SOAP_ACTION+"/addExtrajob", envelope);
             SoapObject result = (SoapObject)envelope.bodyIn;
             if(result != null) {
-                Log.e("**ok> upload", result.getProperty(0).toString());
                 return result.getProperty(0).toString();
             }else{
                 return "nok";
@@ -236,7 +253,7 @@ public class WebService {
             datosArray.addProperty(datos[0].getPropertyInfoCamp(8), datos[0].getProperty(8));
             arrayDatos.addProperty("datos", datosArray);
         }
-        request.addProperty("datos", arrayDatos);
+        //request.addProperty("datos", arrayDatos);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.setOutputSoapObject(request);
         envelope.dotNet = true;

@@ -6,7 +6,7 @@
     <TextView
         android:text="TextView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:id="@+id/tv_fr_bcode"
         android:layout_weight="1"
         android:gravity="center"
@@ -15,7 +15,7 @@
     <TextView
         android:text="TextView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:id="@+id/tv_fr_fecha"
         android:layout_weight="1"
         android:gravity="center"
@@ -24,7 +24,7 @@
     <TextView
         android:text="TextView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:id="@+id/tv_fr_cliente"
         android:layout_weight="2"
         android:gravity="center"

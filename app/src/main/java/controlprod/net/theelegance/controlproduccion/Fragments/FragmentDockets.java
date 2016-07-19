@@ -111,7 +111,6 @@ public class FragmentDockets extends Fragment {
                         datos[posJ] = alteration;
                         posJ++;
                     }
-
                     WebService webService = new WebService();
                     if(MenuActivity.codigo == null || MenuActivity.codigo.equalsIgnoreCase("")){
                         new Util().setToast(getContext(), getResources().getString(R.string.error1));

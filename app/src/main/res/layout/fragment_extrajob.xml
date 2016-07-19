@@ -1,213 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+   <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_docketJob"
-            android:layout_alignParentTop="true"
-            android:gravity="center_vertical"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:layout_marginTop="25dp"
-            android:visibility="visible"
-            android:layout_alignLeft="@+id/textView12"
-            android:layout_alignStart="@+id/textView12"
-            android:layout_alignRight="@+id/textView12"
-            android:layout_alignEnd="@+id/textView12" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/m1"
-            android:id="@+id/textView12"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:textSize="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:visibility="visible"
-            android:layout_below="@+id/tv_docketJob" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_descripcion"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView12"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:visibility="visible">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_descripcion"
-                android:enabled="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:textSize="20dp"
-                android:maxLines="1"
-                android:maxLength="70"
-                android:ellipsize="end"
-                android:focusable="true"
-                android:layout_below="@+id/iv_logo"
-                android:layout_marginTop="20dp"
-                android:hint="@string/descripcion"
-                android:visibility="visible"
-                android:inputType="text" />
-        </android.support.design.widget.TextInputLayout>
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/input_descripcion"
-            android:layout_alignLeft="@+id/textView12"
-            android:layout_alignStart="@+id/textView12"
-            android:layout_alignRight="@+id/textView12"
-            android:layout_alignEnd="@+id/textView12"
-            android:id="@+id/radioGroup"
-            android:layout_marginTop="25dp"
-            android:weightSum="1"
-            android:visibility="visible"
-            android:layout_marginBottom="15dp">
+            android:layout_height="match_parent">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_docketJob"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="25dp"
+                android:visibility="visible"
+                android:layout_alignLeft="@+id/textView12"
+                android:layout_alignStart="@+id/textView12"
+                android:layout_alignRight="@+id/textView12"
+                android:layout_alignEnd="@+id/textView12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/m1"
+                android:id="@+id/textView12"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:visibility="visible"
+                android:layout_below="@+id/tv_docketJob" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/elijaDificultad"
-                android:id="@+id/textView13"
-                android:layout_weight="1.35"
+                android:layout_below="@+id/textView12"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:visibility="visible">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_descripcion"
+                    android:enabled="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="20dp"
+                    android:maxLines="1"
+                    android:maxLength="70"
+                    android:ellipsize="end"
+                    android:focusable="true"
+                    android:layout_below="@+id/iv_logo"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/descripcion"
+                    android:visibility="visible"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_descripcion"
+                android:layout_alignLeft="@+id/textView12"
+                android:layout_alignStart="@+id/textView12"
+                android:layout_alignRight="@+id/textView12"
+                android:layout_alignEnd="@+id/textView12"
+                android:id="@+id/radioGroup"
+                android:layout_marginTop="25dp"
+                android:weightSum="1"
+                android:visibility="visible"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/elijaDificultad"
+                    android:id="@+id/textView13"
+                    android:layout_weight="1.35"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textStyle="bold"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:id="@+id/rd1"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:id="@+id/rd2"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:id="@+id/rd3"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:id="@+id/rd4"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout6"
+                android:layout_below="@+id/chronometer"
+                android:layout_alignRight="@+id/chronometer"
+                android:layout_alignEnd="@+id/chronometer"
+                android:layout_alignLeft="@+id/chronometer"
+                android:layout_alignStart="@+id/chronometer">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:text="@string/start"
+                    android:id="@+id/btn_startJob"
+                    android:background="@drawable/boton_selector"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:text="@string/pause"
+                    android:id="@+id/btn_pause"
+                    android:background="@drawable/boton_selector"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:text="@string/stop"
+                    android:id="@+id/btn_stopJob"
+                    android:background="@drawable/boton_selector"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:enabled="false"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:text="Chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="15dp"
-                android:textStyle="bold"/>
+                android:textSize="30dp"
+                android:layout_below="@+id/radioGroup"
+                android:layout_alignLeft="@+id/radioGroup"
+                android:layout_alignStart="@+id/radioGroup"
+                android:layout_alignRight="@+id/radioGroup"
+                android:layout_alignEnd="@+id/radioGroup"
+                android:layout_marginBottom="15dp"
+                />
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:id="@+id/rd1"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:id="@+id/rd2"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"
-                android:id="@+id/rd3"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:id="@+id/rd4"
-                android:checked="false" />
-
-        </RadioGroup>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout6"
-            android:layout_below="@+id/chronometer"
-            android:layout_alignRight="@+id/chronometer"
-            android:layout_alignEnd="@+id/chronometer"
-            android:layout_alignLeft="@+id/chronometer"
-            android:layout_alignStart="@+id/chronometer">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linearLayout9"
+                android:layout_below="@+id/tv_docketJob">
+            </LinearLayout>
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="150dp"
                 android:layout_height="60dp"
-                android:text="@string/start"
-                android:id="@+id/btn_startJob"
+                android:text="@string/enviar"
+                android:id="@+id/btn_enviar"
+                android:layout_below="@+id/linearLayout6"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/boton_selector"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:layout_weight="1" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:text="@string/pause"
-                android:id="@+id/btn_pause"
-                android:background="@drawable/boton_selector"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:text="@string/stop"
-                android:id="@+id/btn_stopJob"
-                android:background="@drawable/boton_selector"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:enabled="false"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <Button
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:text="@string/enviar"
-            android:id="@+id/btn_enviar"
-            android:layout_below="@+id/linearLayout6"
-            android:layout_centerHorizontal="true"
-            android:textSize="25dp"
-            android:textColor="@color/white"
-            android:background="@drawable/boton_selector"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="15dp"
-            android:visibility="gone"/>
-
-        <Chronometer
-            android:id="@+id/chronometer"
-            android:text="Chronometer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="30dp"
-            android:layout_below="@+id/radioGroup"
-            android:layout_alignLeft="@+id/radioGroup"
-            android:layout_alignStart="@+id/radioGroup"
-            android:layout_alignRight="@+id/radioGroup"
-            android:layout_alignEnd="@+id/radioGroup"
-            android:layout_marginBottom="15dp"
-            />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="20dp"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/linearLayout9"
-            android:layout_below="@+id/tv_docketJob">
-        </LinearLayout>
-
-
-    </RelativeLayout>
-
-</ScrollView>
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

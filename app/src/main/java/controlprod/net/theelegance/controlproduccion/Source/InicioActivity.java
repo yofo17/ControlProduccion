@@ -141,7 +141,6 @@ public class InicioActivity extends AppCompatActivity {
             i.putExtra("imei", imei);
             startActivity(i);
             Limpiar(view);
-            new Util().setToast(getApplicationContext(),"Access Granted");
         }else {
             new Util().setToast(getApplicationContext(), getResources().getString(R.string.error3));
         }

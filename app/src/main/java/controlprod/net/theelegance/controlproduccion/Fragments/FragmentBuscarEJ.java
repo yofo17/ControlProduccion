@@ -80,8 +80,10 @@ public class FragmentBuscarEJ extends Fragment{
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 String text = et_buscar.getText().toString().toLowerCase(Locale.getDefault());
-                adapter.filter(text);
-                total1.setText(getResources().getString(R.string.total_) + String.valueOf(listView.getCount()));
+                try{
+                    adapter.filter(text);
+                    total1.setText(getResources().getString(R.string.total_) + String.valueOf(listView.getCount()));
+                }catch (Exception e){}
             }
 
             @Override
