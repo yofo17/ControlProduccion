@@ -111,7 +111,7 @@ public class FragmentExtraJob  extends Fragment{
         if(!docket.equals("")){
             fondos();
             docketNom.setText(tipocliente + codcliente + " " + nomclte + "\n"
-                    + "Barcode: " + barra + "\t\t\t Required Date: " +fecha_req);
+                    + "Barcode: " + barra + "\nRequired Date: " +fecha_req);
             descripcion.requestFocus();
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);

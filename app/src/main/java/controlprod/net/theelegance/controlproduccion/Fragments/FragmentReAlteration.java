@@ -198,7 +198,9 @@ public class FragmentReAlteration extends Fragment {
                 tipocliente = temporal.get(i+2);
                 codcliente = temporal.get(i+3);
                 id_detalle = temporal.get(i+5);
-                cargarDatos(barra, tipocliente, codcliente, id_detalle);
+                if(FragmentReAlterationFirst.docket.equals(barra)){
+                    cargarDatos(barra, tipocliente, codcliente, id_detalle);
+                }
             }
         }
     }
@@ -213,14 +215,12 @@ public class FragmentReAlteration extends Fragment {
         String ok = new WebService().getAlteration(MenuActivity.codigo,"",barra, tipoclte, "", id_detalle, "0",  2);
         if(ok.equalsIgnoreCase("ok")){
             for(int i=0; i<arrayList.size(); i=i+18){
-                if(FragmentReAlterationFirst.docket.equals(arrayList.get(i+1))){
-                    DocketReAlteration dArray = new DocketReAlteration(arrayList.get(i+1),
-                            arrayList.get(i+2), arrayList.get(i+4), arrayList.get(i+5),
-                            arrayList.get(i+6), arrayList.get(i+7), arrayList.get(i+8),
-                            arrayList.get(i+14), arrayList.get(i+3), arrayList.get(i),
-                            arrayList.get(i+12));
-                    docketarray.add(dArray);
-                }
+                DocketReAlteration dArray = new DocketReAlteration(arrayList.get(i+1),
+                        arrayList.get(i+2), arrayList.get(i+4), arrayList.get(i+5),
+                        arrayList.get(i+6), arrayList.get(i+7), arrayList.get(i+8),
+                        arrayList.get(i+14), arrayList.get(i+3), arrayList.get(i),
+                        arrayList.get(i+12));
+                docketarray.add(dArray);
             }
             adapter = new AdapterReAlteration(getContext(), docketarray, FragmentReAlteration.this);
         }else{
