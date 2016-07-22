@@ -42,7 +42,8 @@ public class AdapterReAlteration extends BaseAdapter {
     public class ViewHolder {
         TextView subitem;
         TextView cantidad;
-        TextView nomGrupo;
+        TextView totaltime;
+        TextView _r_;
     }
 
     @Override
@@ -57,7 +58,7 @@ public class AdapterReAlteration extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position * 13;
+        return position * 23;
     }
 
     public View getView(final int position, View view, ViewGroup parent) {
@@ -66,15 +67,17 @@ public class AdapterReAlteration extends BaseAdapter {
             holder = new ViewHolder();
             view = inflater.inflate(R.layout.layout_docket_realteration, null);
             holder.subitem = (TextView) view.findViewById(R.id.tv_RAsubitem);
-            holder.nomGrupo = (TextView) view.findViewById(R.id.tv_RAnomGrupo);
+            holder.totaltime = (TextView) view.findViewById(R.id.tv_RAtotalTime);
             holder.cantidad = (TextView) view.findViewById(R.id.tv_RAcantidad);
+            holder._r_ = (TextView) view.findViewById(R.id.tv_RAr);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
         holder.subitem.setText(docketArray.get(position).getNomsubitem());
-        holder.nomGrupo.setText(docketArray.get(position).getNomgrupo());
+        holder.totaltime.setText(docketArray.get(position).getTotal_time());
         holder.cantidad.setText(docketArray.get(position).getCantidad());
+        holder._r_.setText(docketArray.get(position).get_r_());
 
         lv_dockets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -86,7 +86,8 @@ public class FragmentReAlteration extends Fragment {
             }
         });
 
-        et_buscar.setText(FragmentReAlterationFirst.cliente+FragmentReAlterationFirst.codcliente+FragmentReAlterationFirst.nomcliente+
+        et_buscar.setText(FragmentReAlterationFirst.cliente+FragmentReAlterationFirst.codcliente+
+                " "+FragmentReAlterationFirst.nomcliente+
                 "\nBarcode: " + FragmentReAlterationFirst.docket+
                 "\nRequired Date: " + FragmentReAlterationFirst.requiredate );
 
@@ -216,12 +217,12 @@ public class FragmentReAlteration extends Fragment {
 
         String ok = new WebService().getAlteration(MenuActivity.codigo,"",barra, tipoclte, "", id_detalle, "0",  2);
         if(ok.equalsIgnoreCase("ok")){
-            for(int i=0; i<arrayList.size(); i=i+18){
+            for(int i=0; i<arrayList.size(); i=i+23){
                 DocketReAlteration dArray = new DocketReAlteration(arrayList.get(i+1),
                         arrayList.get(i+2), arrayList.get(i+4), arrayList.get(i+5),
                         arrayList.get(i+6), arrayList.get(i+7), arrayList.get(i+8),
                         arrayList.get(i+14), arrayList.get(i+3), arrayList.get(i),
-                        arrayList.get(i+12));
+                        arrayList.get(i+12), arrayList.get(i+17), arrayList.get(i+18));
                 docketarray.add(dArray);
             }
             adapter = new AdapterReAlteration(getContext(), docketarray, FragmentReAlteration.this);

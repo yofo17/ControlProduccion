@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import controlprod.net.theelegance.controlproduccion.Fragments.FragmentBuscarEJ;
 import controlprod.net.theelegance.controlproduccion.R;
 
 /**

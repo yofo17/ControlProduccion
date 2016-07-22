@@ -8,23 +8,34 @@
         android:layout_height="match_parent"
         android:text="New Text"
         android:id="@+id/tv_RAsubitem"
-        android:layout_weight="1"
-        android:gravity="center"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:text="New Text"
-        android:id="@+id/tv_RAnomGrupo"
-        android:layout_weight="1"
-        android:gravity="center" />
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:textSize="25sp"/>
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:text="New Text"
         android:id="@+id/tv_RAcantidad"
-        android:layout_weight="1"
-        android:gravity="center"/>
+        android:layout_weight="0.8"
+        android:gravity="center"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="New Text"
+        android:id="@+id/tv_RAtotalTime"
+        android:layout_weight="0.8"
+        android:gravity="center"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/tv_RAr"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:textSize="25sp"/>
 
 </LinearLayout>

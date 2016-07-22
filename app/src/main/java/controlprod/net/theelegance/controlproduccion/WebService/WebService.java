@@ -11,11 +11,16 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import controlprod.net.theelegance.controlproduccion.Fragments.FragmentBuscarEJ;
+import controlprod.net.theelegance.controlproduccion.Fragments.FragmentDatos;
+import controlprod.net.theelegance.controlproduccion.Fragments.FragmentDockets;
+import controlprod.net.theelegance.controlproduccion.Fragments.FragmentDocketsView;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentEliminar;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentExtraJob;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentQCLV;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentQualityControl;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentReAlteration;
+import controlprod.net.theelegance.controlproduccion.Fragments.FragmentReAlterationFirst;
 import controlprod.net.theelegance.controlproduccion.Source.InicioActivity;
 import controlprod.net.theelegance.controlproduccion.Source.MenuActivity;
 
@@ -709,7 +714,7 @@ public class WebService {
                     FragmentReAlteration.arrayList = new ArrayList<String>();
                     for (SoapObject soap : vectorOfSoapObject) {
                         Altercons par = new Altercons();
-                        for(int j=0; j<18; j++){
+                        for(int j=0; j<23; j++){
                             FragmentReAlteration.arrayList.add(soap.getProperty(j).toString());
                         }
                         param[++i] = par;

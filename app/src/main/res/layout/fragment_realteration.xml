@@ -61,34 +61,45 @@
         android:id="@+id/linearLayout5"
         android:layout_below="@+id/et_buscar_realteration"
         android:layout_alignLeft="@+id/lv_realteration"
-        android:layout_alignStart="@+id/lv_realteration">
+        android:layout_alignStart="@+id/lv_realteration"
+        android:layout_alignRight="@+id/lv_realteration"
+        android:layout_alignEnd="@+id/lv_realteration">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/subitem"
             android:id="@+id/tView2"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:gravity="center"
             android:background="@drawable/button_border" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="@string/nomgrupo"
-            android:id="@+id/textView61"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="@drawable/button_border"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/cantidad_"
             android:id="@+id/tView9"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:gravity="center"
             android:background="@drawable/button_border" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Total Time"
+            android:id="@+id/textView61"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:background="@drawable/button_border"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="R"
+            android:id="@+id/textView90"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:background="@drawable/button_border"/>
 
     </LinearLayout>
 
