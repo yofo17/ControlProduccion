@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
-import controlprod.net.theelegance.controlproduccion.Fragments.FragmentDatos;
-import controlprod.net.theelegance.controlproduccion.Fragments.FragmentDocketsView;
 import controlprod.net.theelegance.controlproduccion.R;
 
 public class ViewActivity extends TabActivity {

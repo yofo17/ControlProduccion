@@ -1,19 +1,15 @@
 package controlprod.net.theelegance.controlproduccion.Source;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,23 +18,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.StringTokenizer;
 
 import controlprod.net.theelegance.controlproduccion.BDatos.BDHelper;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentGroupItems;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentQCLV;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentReAlteration;
-import controlprod.net.theelegance.controlproduccion.Fragments.FragmentReAlterationFirst;
 import controlprod.net.theelegance.controlproduccion.General.Util;
-import controlprod.net.theelegance.controlproduccion.Mail.GMailSender;
 import controlprod.net.theelegance.controlproduccion.R;
 
 public class PrendasActivity extends AppCompatActivity {

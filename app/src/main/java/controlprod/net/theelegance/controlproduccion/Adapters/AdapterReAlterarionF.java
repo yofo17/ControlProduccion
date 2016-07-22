@@ -15,7 +15,6 @@ import java.util.Locale;
 
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentQCLV;
 import controlprod.net.theelegance.controlproduccion.Fragments.FragmentReAlteration;
-import controlprod.net.theelegance.controlproduccion.Fragments.FragmentReAlterationFirst;
 import controlprod.net.theelegance.controlproduccion.R;
 
 /**
@@ -84,6 +83,9 @@ public class AdapterReAlterarionF extends BaseAdapter {
             public void onItemClick(AdapterView<?> parent, View view, int position, long arg3) {
                 FragmentReAlterationFirst.docket = docketArray.get(position).getBarra();
                 FragmentReAlterationFirst.cliente = docketArray.get(position).getTipoclte();
+                FragmentReAlterationFirst.requiredate = docketArray.get(position).getFecha_req();
+                FragmentReAlterationFirst.nomcliente = docketArray.get(position).getNomclte();
+                FragmentReAlterationFirst.codcliente = docketArray.get(position).getCodclte();
                 //fragment.replaceFragment(barra, tipoclte, codclte, nomclte, id_detalle);
             }
         });

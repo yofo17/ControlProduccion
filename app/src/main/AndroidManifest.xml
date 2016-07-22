@@ -46,16 +46,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Fragments.FragmentDatos"
-            android:label="@string/title_activity_view"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Fragments.FragmentDocketsView"
-            android:label="@string/title_activity_view"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Source.ViewActivity"
             android:label="@string/title_activity_view"
             android:screenOrientation="portrait"

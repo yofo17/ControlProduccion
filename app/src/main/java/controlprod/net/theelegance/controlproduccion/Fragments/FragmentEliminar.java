@@ -177,8 +177,7 @@ public class FragmentEliminar extends Fragment {
                         dockets_Eliminar.get(i+2)+" - " +dockets_Eliminar.get(i+3),
                         dockets_Eliminar.get(i+7), dockets_Eliminar.get(i+12),
                         dockets_Eliminar.get(i+17), dockets_Eliminar.get(i),
-                        dockets_Eliminar.get(1+15));
-
+                        dockets_Eliminar.get(i+18));
                 docketarray.add(dArray);
             }
             adapter = new AdapterEliminar(getContext(), docketarray, FragmentEliminar.this);

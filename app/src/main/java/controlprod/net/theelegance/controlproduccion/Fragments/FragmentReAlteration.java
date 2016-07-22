@@ -86,7 +86,9 @@ public class FragmentReAlteration extends Fragment {
             }
         });
 
-        et_buscar.setText("Barcode: " + FragmentReAlterationFirst.docket);
+        et_buscar.setText(FragmentReAlterationFirst.cliente+FragmentReAlterationFirst.codcliente+FragmentReAlterationFirst.nomcliente+
+                "\nBarcode: " + FragmentReAlterationFirst.docket+
+                "\nRequired Date: " + FragmentReAlterationFirst.requiredate );
 
         btn_seleccionar.setOnClickListener(new View.OnClickListener() {
             @Override

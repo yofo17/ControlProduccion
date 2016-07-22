@@ -38,7 +38,7 @@ public class FragmentReAlterationFirst extends Fragment {
     AdapterReAlterarionF adapter;
     public static ArrayList<String> arrayList;
     public static ListView listView;
-    public static String docket="", cliente;
+    public static String docket="", cliente, nomcliente, requiredate, codcliente;
     private EditText buscar;
     private TextView total;
 
