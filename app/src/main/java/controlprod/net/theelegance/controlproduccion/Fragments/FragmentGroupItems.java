@@ -3,9 +3,12 @@ package controlprod.net.theelegance.controlproduccion.Fragments;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,8 +46,14 @@ public class FragmentGroupItems extends Fragment {
         return inflater.inflate(R.layout.fragment_grouptimes, container, false);
     }
 
+    private ActionBar getActionBar() {
+        return ((AppCompatActivity) getActivity()).getSupportActionBar();
+    }
+
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
+        ColorDrawable cd = new ColorDrawable(getResources().getColor(R.color.colorPrimary));
+        getActionBar().setBackgroundDrawable(cd);
         lv_listprenda=(ListView) view.findViewById(R.id.lv_prendas);
         arrayList = new ArrayList<String>();
         docketarray = new ArrayList<GroupItem>();

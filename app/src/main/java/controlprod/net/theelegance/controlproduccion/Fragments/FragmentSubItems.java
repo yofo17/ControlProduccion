@@ -6,11 +6,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,8 +63,17 @@ public class FragmentSubItems extends Fragment {
         return inflater.inflate(R.layout.fragment_subitems, container, false);
     }
 
+    private ActionBar getActionBar() {
+        return ((AppCompatActivity) getActivity()).getSupportActionBar();
+    }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Spannable text = new SpannableString(SubItemsActivity.titulo_);
+        text.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        getActivity().setTitle(text);
+        ColorDrawable cd = new ColorDrawable(getResources().getColor(R.color.colorPrimary));
+        getActionBar().setBackgroundDrawable(cd);
         lv_list_subitem=(ListView) view.findViewById(R.id.lv_subitem);
         btn_docket = (Button)view.findViewById(R.id.btn_docket);
         context = getContext();
@@ -67,7 +83,6 @@ public class FragmentSubItems extends Fragment {
         btn_docket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("*** SUBITEMLIST", String.valueOf(FragmentSubItems.subitemsList.size()));
                 if(nombre_subitem.equalsIgnoreCase("") || nombre_subitem.equalsIgnoreCase(getResources().getString(R.string.error6))){
                     new Util().setToast(getContext(), getResources().getString(R.string.error2));
                 }else{

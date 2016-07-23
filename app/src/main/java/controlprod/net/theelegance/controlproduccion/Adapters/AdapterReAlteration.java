@@ -77,7 +77,10 @@ public class AdapterReAlteration extends BaseAdapter {
         holder.subitem.setText(docketArray.get(position).getNomsubitem());
         holder.totaltime.setText(docketArray.get(position).getTotal_time());
         holder.cantidad.setText(docketArray.get(position).getCantidad());
-        holder._r_.setText(docketArray.get(position).get_r_());
+        if(docketArray.get(position).get_r_().equals("1"))
+            holder._r_.setText("R");
+        else
+            holder._r_.setText("");
 
         lv_dockets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

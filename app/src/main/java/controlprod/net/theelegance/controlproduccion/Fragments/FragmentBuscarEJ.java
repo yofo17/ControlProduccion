@@ -2,12 +2,15 @@ package controlprod.net.theelegance.controlproduccion.Fragments;
 
 import android.app.ProgressDialog;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -65,12 +68,17 @@ public class FragmentBuscarEJ extends Fragment{
         menu.setGroupVisible(0, false);
     }
 
+    private ActionBar getActionBar() {
+        return ((AppCompatActivity) getActivity()).getSupportActionBar();
+    }
+
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         Spannable text = new SpannableString(getActivity().getTitle());
         text.setSpan(new ForegroundColorSpan(Color.RED), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         getActivity().setTitle(text);
-
+        ColorDrawable cd = new ColorDrawable(getResources().getColor(R.color.yellow_600));
+        getActionBar().setBackgroundDrawable(cd);
         et_buscar = (EditText)view.findViewById(R.id.et_buscar_buscarEJ);
         listView = (ListView)view.findViewById(R.id.lv_buscarEJ);
         docketarray = new ArrayList<ModelQCLV>();

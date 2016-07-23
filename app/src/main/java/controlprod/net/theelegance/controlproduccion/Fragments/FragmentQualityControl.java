@@ -254,37 +254,3 @@ public class FragmentQualityControl extends Fragment {
     }
 
 }
-
-/*
-Luego despliega:
-Docket: 7466  (ejm)   --> en lugar de Docket:  poner BarCode: )
-Required Date: 11/05/2016   Collected: 10/05/2016  (mostrar Collected Date  campo cdate tabla: drivercollect)
-Customer: 1003001  BOYS BASE  (mostrar el codigo antes de la descripcion del cliente)
-
-*Mostrar encima del checkbox la palabra  "Check"
-
-(Luego debe salir asi por Grupo , luego por Item, luego Subitem  ..asi: ejm)
- JAC - JACK / MEN  (Grupo y Descripcion en este docket)
- JAC01 - SHORTEN  SLEEVES (esta es el Item del Grupo JAC)
-      UNDO ( y el resto de informacion como esta mostrando ..)
-     PREPARE  …mostrar el resto de informacion
-     SEW
-     IRON
-JAC02 - SHORTEN /LENGTHEN  SLEEV (otro Item del mismo Grupo JAC)
-      UNDO  ( y el resto de informacion como esta mostrando ..)
-     PREPARE
-     SEW
-     IRON
-     SEW BUTTOMS
-TRO - TROUSERS  (Otro Grupo y Descripcion)
-TRO01 - SHORTEN AS PIN
-      OPEN  ( y el resto de informacion como esta mostrando ..)
-     PREPARE
-     WIDEN
-MIS01 - EXTRA JOB  (Otro Grupo y Descripcion)
-MIS01 - EXTRA JOB
-      (DESCRIPCION DEL EXTRA JOB ..y el resto de informacion como los Subitems anteriores)
-
-*No esta mostrando los items de Re-Alteration. Debe mostrarlos
-
-* */

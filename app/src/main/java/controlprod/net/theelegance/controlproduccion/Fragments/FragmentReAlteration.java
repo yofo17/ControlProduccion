@@ -4,13 +4,17 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -72,6 +76,9 @@ public class FragmentReAlteration extends Fragment {
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
+        Spannable text = new SpannableString(getActivity().getTitle());
+        text.setSpan(new ForegroundColorSpan(Color.RED), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        getActivity().setTitle(text);
         et_buscar = (TextView)view.findViewById(R.id.et_buscar_realteration);
         lv_realteration = (ListView)view.findViewById(R.id.lv_realteration);
         docketarray = new ArrayList<DocketReAlteration>();
@@ -108,10 +115,22 @@ public class FragmentReAlteration extends Fragment {
                                 public void onClick(DialogInterface dialog, int whichButton) {
                                     int cantidad = Integer.parseInt(input1.getText().toString());
                                     if(cantidad>0 && cantidad<= _quantity){
-                                        dialog.cancel();
-                                        sendAlteration(input1.getText().toString());
                                         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                                         imm.hideSoftInputFromWindow(input1.getWindowToken(), 0);
+                                        dialog.cancel();
+                                        //sendAlteration(input1.getText().toString());
+                                        String __cantidad = input1.getText().toString();
+                                        String texto = new WebService().uploadRealteration(MenuActivity.codigo, _unico, _id_detalle,
+                                                FragmentReAlterationFirst.cliente, __cantidad);
+                                        if (texto.equalsIgnoreCase("ok")) {
+                                            FragmentManager fm = getActivity().getSupportFragmentManager();
+                                            fm.popBackStack();
+                                            new Util().setToast(getContext(), getResources().getString(R.string.exitos2));
+                                        } else {
+                                            lv_texto = "";
+                                            et_buscar.setText("");
+                                            new Util().setToast(getContext(), getResources().getString(R.string.error1)+"\n"+texto);
+                                        }
                                     }else{
                                         new Util().setToast(getActivity().getApplicationContext(), "You must enter a valid quantity");
                                     }
@@ -120,10 +139,10 @@ public class FragmentReAlteration extends Fragment {
 
                             .setNegativeButton(getResources().getString(R.string.cancelar), new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton) {
-                                    dialog.cancel();
                                     new Util().setToast(getContext(), getResources().getString(R.string.error4));
                                     InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                                     imm.hideSoftInputFromWindow(input1.getWindowToken(), 0);
+                                    dialog.cancel();
                                 }
                             });
                     alert.show();
@@ -138,7 +157,7 @@ public class FragmentReAlteration extends Fragment {
         task.execute();
     }
 
-    public void sendAlteration(final String cantidad){
+    /*public void sendAlteration(final String cantidad){
         AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
         builder1.setMessage(getResources().getString(R.string.confirmacion));
         builder1.setCancelable(false);
@@ -167,7 +186,7 @@ public class FragmentReAlteration extends Fragment {
                 });
         AlertDialog alert11 = builder1.create();
         alert11.show();
-    }
+    }*/
 
     public void validarDatos(){
         String barra, codcliente, tipocliente, id_detalle;
@@ -197,12 +216,13 @@ public class FragmentReAlteration extends Fragment {
             //new Util().setToast(getContext(), getResources().getString(R.string.error3));
         }else{
             for(int i=0; i<temporal.size(); i=i+6){
-                barra = temporal.get(i+1);
-                tipocliente = temporal.get(i+2);
-                codcliente = temporal.get(i+3);
-                id_detalle = temporal.get(i+5);
-                if(FragmentReAlterationFirst.docket.equals(barra)){
+                if(FragmentReAlterationFirst.docket.equalsIgnoreCase(temporal.get(i+1))){
+                    barra = temporal.get(i+1);
+                    tipocliente = temporal.get(i+2);
+                    codcliente = temporal.get(i+3);
+                    id_detalle = temporal.get(i+5);
                     cargarDatos(barra, tipocliente, codcliente, id_detalle);
+                    break;
                 }
             }
         }
@@ -214,7 +234,6 @@ public class FragmentReAlteration extends Fragment {
         lv_realteration.setVisibility(View.VISIBLE);
         btn_seleccionar.setVisibility(View.VISIBLE);
         et_buscar.setEnabled(true);
-
         String ok = new WebService().getAlteration(MenuActivity.codigo,"",barra, tipoclte, "", id_detalle, "0",  2);
         if(ok.equalsIgnoreCase("ok")){
             for(int i=0; i<arrayList.size(); i=i+23){

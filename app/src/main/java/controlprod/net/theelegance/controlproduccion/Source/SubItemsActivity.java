@@ -21,6 +21,7 @@ public class SubItemsActivity extends AppCompatActivity {
     public static String codigo;
     public static String nombre_item;
     private int fr;
+    public static String titulo_;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class SubItemsActivity extends AppCompatActivity {
             codigo = extras.getString("codigo");
             nombre_item = (codigo + " - " +extras.getString("nombre"));
             setTitle(codigo + " - " +extras.getString("nombre"));
+            titulo_ = codigo + " - " +extras.getString("nombre");
         }
 
         replaceFragment(new FragmentSubItems(), 1);

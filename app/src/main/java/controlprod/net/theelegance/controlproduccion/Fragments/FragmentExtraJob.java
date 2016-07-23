@@ -121,6 +121,8 @@ public class FragmentExtraJob  extends Fragment{
             new Util().setToast(getContext(), getResources().getString(R.string.error4));
         }
 
+        mChronometer.setText("00:00:00");
+
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

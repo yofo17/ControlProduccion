@@ -136,17 +136,17 @@ public class MenuActivity extends AppCompatActivity {
         switch (estado){
             case "NOWORK":
                 botones(false, false, false, false, false, false, true);
-                new Util().setToast(getApplicationContext(), getResources().getString(R.string.oficina2));
+                new Util().setToast(getApplicationContext(), getResources().getString(R.string.oficina2)+"\n"+sinc);
                 break;
 
             case "ENDWORK":
                 botones(false, false, false, false, false, false, false);
-                new Util().setToast(getApplicationContext(), getResources().getString(R.string.oficina1));
+                new Util().setToast(getApplicationContext(), getResources().getString(R.string.oficina1)+"\n"+sinc);
                 break;
 
             case "ERROR":
                 botones(false, false, false, false, false, false, false);
-                new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1));
+                new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1)+"\n"+sinc);
                 break;
 
             case "NOEXISTE":
@@ -386,7 +386,7 @@ public class MenuActivity extends AppCompatActivity {
             btn_lunch.setText(getResources().getString(R.string.lunch));
             llamarWebService();
         }else{
-            new  Util().setToast(getApplicationContext(), getResources().getString(R.string.error1));
+            new  Util().setToast(getApplicationContext(), getResources().getString(R.string.error1)+"\n"+ok);
         }
     }
 
@@ -399,7 +399,7 @@ public class MenuActivity extends AppCompatActivity {
                     new Util().setToast(getApplicationContext(), getResources().getString(R.string._breakEnd1));
                     btn_break.setText(getResources().getString(R.string._breakEnd1));
                 }else{
-                    new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1));
+                    new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1)+"\n"+ok);
                 }
             }else if(btn_break.getText().toString().equalsIgnoreCase(getResources().getString(R.string._breakEnd1))){
                 String ok = new WebService().uploadEstado(codigo, "STA_BREAK2", id);
@@ -408,7 +408,7 @@ public class MenuActivity extends AppCompatActivity {
                     new Util().setToast(getApplicationContext(), getResources().getString(R.string._breakStart2));
                     btn_break.setText(getResources().getString(R.string._breakStart2));
                 }else{
-                    new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1));
+                    new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1)+"\n"+ok);
                 }
             }else if(btn_break.getText().toString().equalsIgnoreCase(getResources().getString(R.string._breakStart2))){
                 String ok = new WebService().uploadEstado(codigo, "END_BREAK2", id);
@@ -419,7 +419,7 @@ public class MenuActivity extends AppCompatActivity {
                     btn_break.setEnabled(false);
                     btn_break.setBackgroundResource(R.drawable.boton_diseno2);
                 }else{
-                    new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1));
+                    new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1)+"\n"+ok);
                 }
             }
         }else{
@@ -446,7 +446,7 @@ public class MenuActivity extends AppCompatActivity {
                     btn_lunch.setBackgroundResource(R.drawable.boton_diseno2);
                 }
             }else{
-                new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1));
+                new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1)+"\n"+ok);
             }
         }else{
             String ok = new WebService().uploadEstado(codigo, "STA_LUNCH", id);
@@ -455,7 +455,7 @@ public class MenuActivity extends AppCompatActivity {
                 new Util().setToast(getApplicationContext(), getResources().getString(R.string.lunchStart) +"\n"+ok);
                 btn_lunch.setText(getResources().getString(R.string.lunchStart));
             }else{
-                new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1));
+                new Util().setToast(getApplicationContext(), getResources().getString(R.string.error1)+"\n"+ok);
             }
         }
     }

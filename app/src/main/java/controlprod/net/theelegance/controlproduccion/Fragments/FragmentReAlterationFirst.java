@@ -1,17 +1,26 @@
 package controlprod.net.theelegance.controlproduccion.Fragments;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.TextViewCompat;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -59,8 +68,17 @@ public class FragmentReAlterationFirst extends Fragment {
         menu.setGroupVisible(0, false);
     }
 
+    private ActionBar getActionBar() {
+        return ((AppCompatActivity) getActivity()).getSupportActionBar();
+    }
+
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
+        Spannable text = new SpannableString(getActivity().getTitle());
+        text.setSpan(new ForegroundColorSpan(Color.RED), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        getActivity().setTitle(text);
+        ColorDrawable cd = new ColorDrawable(getResources().getColor(R.color.yellow_600));
+        getActionBar().setBackgroundDrawable(cd);
         btn_select = (Button) view.findViewById(R.id.btn_fr1);
         btn_select.setOnClickListener(new View.OnClickListener() {
             @Override
